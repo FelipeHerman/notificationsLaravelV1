@@ -24,8 +24,9 @@
                             </select>
                         </div>
                             
-                        <div class="form-group">
+                        <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
                             <textarea name="body" class="form-control" placeholder="Escribe aquí tu mensaje"></textarea>
+                            {!! $errors->first('body', "<span class=help-block>:message</span>") !!}
                         </div>
 
                         <div class="form-group">

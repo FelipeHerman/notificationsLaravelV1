@@ -32,7 +32,11 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        /* Validación */
+        $this->validate($request, [
+            'body' => 'required',
+            'recipient_id' => 'required|exists:users,id'
+        ]);
+
         Message::create([
             'sender_id' => auth()->id(),
             'recipient_id' => $request->recipient_id,
