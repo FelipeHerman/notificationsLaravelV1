@@ -13,10 +13,14 @@ class NotificationsController extends Controller
 
     public function index()
     {
-
         return view('notifications.index', [
             'unreadNotifications' => auth()->user()->unreadNotifications,
             'readNotifications' => auth()->user()->readNotifications
         ]);
+    }
+
+    public function read($id)
+    {
+        
     }
 }
