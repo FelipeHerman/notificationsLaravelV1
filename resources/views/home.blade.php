@@ -15,13 +15,14 @@
                             </div>
                         @endif
 
-                        <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
+                        <div class="form-group {{ $errors->has('recipient_id') ? 'has-error' : '' }}">
                             <select name="recipient_id" class="form-control">
                                 <option value="">Selecciona el usuario</option>
                                 @foreach($users as $user)
                                     <option value="{{ $user->id }}">{{ $user->name }}</option>
                                 @endforeach
                             </select>
+                            {!! $errors->first('recipient_id', "<span class=help-block>:message</span>") !!}
                         </div>
                             
                         <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
