@@ -48,7 +48,7 @@
                         @else
                             <li><a href="/home">Enviar mensaje</a></li>
                             <li>
-                                <a href="#">Notificaciones 
+                                <a href="{{ route('notifications.index') }}">Notificaciones 
                                     @if($count = Auth::user()->notifications->count())
                                         <span class="badge">{{ $count }}</span>
                                     @endif
