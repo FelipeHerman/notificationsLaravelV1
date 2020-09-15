@@ -15,7 +15,7 @@
                             </div>
                         @endif
 
-                        <div class="form-group">
+                        <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
                             <select name="recipient_id" class="form-control">
                                 <option value="">Selecciona el usuario</option>
                                 @foreach($users as $user)
