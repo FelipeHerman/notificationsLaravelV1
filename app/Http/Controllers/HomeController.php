@@ -55,6 +55,6 @@ class HomeController extends Controller
     {
         $message = Message::findOrFail($id);
 
-        return view('messages.show', compact('message'))
+        return view('messages.show', compact('message'));
     }
 }
