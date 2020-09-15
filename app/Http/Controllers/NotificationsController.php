@@ -26,4 +26,11 @@ class NotificationsController extends Controller
 
         return back()->with('flash', 'Notificación marcada como leída');
     }
+
+    public function destroy($id)
+    {
+        DatabaseNotification::find($id)->delete();
+
+        return back()->with('flash', 'Notificación eliminada');
+    }
 }
