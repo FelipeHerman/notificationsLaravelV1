@@ -46,7 +46,7 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Registrar</a></li>
                         @else
-                            <li><a href="/home">Enviar mensaje</a></li>
+                            <li><a href="{{ route('messages.create') }}">Enviar mensaje</a></li>
                             <li>
                                 <a href="{{ route('notifications.index') }}">
                                     Notificaciones 
@@ -66,7 +66,7 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Cerrar sesión
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

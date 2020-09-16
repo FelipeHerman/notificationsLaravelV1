@@ -7,7 +7,7 @@ use App\Message;
 use Illuminate\Http\Request;
 use App\Notifications\MessageSent;
 
-class HomeController extends Controller
+class MessagesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,12 +24,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    /* =============================================================== */
+
+    public function create()
     {
         $users = User::where('id', '!=', auth()->id())->get();
 
         return view('home', compact('users'));
     }
+
+    /* =============================================================== */
 
     public function store(Request $request)
     {
@@ -50,6 +55,8 @@ class HomeController extends Controller
 
         return back()->with('flash', 'Tu mensaje fué enviado');
     }
+
+    /* =============================================================== */
 
     public function show($id)
     {
