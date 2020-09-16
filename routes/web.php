@@ -6,6 +6,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::resource('posts', 'PostsController');
+
 Route::get('messages/create', 'MessagesController@create')->name('messages.create');
 Route::post('messages', 'MessagesController@store')->name('messages.store');
 Route::get('messages/{id}', 'MessagesController@show')->name('messages.show');
