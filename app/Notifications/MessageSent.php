@@ -48,10 +48,12 @@ class MessageSent extends Notification
                     ->action('Click aquí para ver el mensaje', route('messages.show', $this->message->id))
                     ->line('Gracias por utilizar nuestra aplicación!'); */
         
-        return (new MailMessage)->view('emails.notification', [
+        /* return (new MailMessage)->view('emails.notification', [
             'msg' => $this->message,
             'user' => $notifiable
-        ])->subject('Mensaje recibido desde LaravelNotifications');
+        ])->subject('Mensaje recibido desde LaravelNotifications'); */
+
+        return (new CustomMail($message))->to($notifiable->email);
     }
 
     /**
