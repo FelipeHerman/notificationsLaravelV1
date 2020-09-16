@@ -43,7 +43,7 @@ class MessageSent extends Notification
     {
         return (new MailMessage)
                     ->line('Has recibido un mensaje.')
-                    ->action('Notification Action', route('messages.show', $this->message->id))
+                    ->action('Click aquí para ver el mensaje', route('messages.show', $this->message->id))
                     ->line('Gracias por utilizar nuestra aplicación!');
     }
 
