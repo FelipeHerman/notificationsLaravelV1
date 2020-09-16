@@ -42,6 +42,7 @@ class MessageSent extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
+                    ->subject('Mensaje recibido desde tu sitio web.')
                     ->line('Has recibido un mensaje.')
                     ->action('Click aquí para ver el mensaje', route('messages.show', $this->message->id))
                     ->line('Gracias por utilizar nuestra aplicación!');
