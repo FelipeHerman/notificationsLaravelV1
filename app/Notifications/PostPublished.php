@@ -30,7 +30,7 @@ class PostPublished extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail', 'database'];
     }
 
     /**
@@ -57,7 +57,8 @@ class PostPublished extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            'link' => route('posts.show', $this->post),
+            'text' => "Hemos publicado un nuevos post" . $this->post->title
         ];
     }
 }
